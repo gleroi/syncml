@@ -1,0 +1,522 @@
+<schema
+  xmlns='http://www.w3.org/2000/10/XMLSchema'
+  targetNamespace='http://www.w3.org/namespace/'
+  xmlns:t='http://www.w3.org/namespace/'>
+
+ <element name='SyncML'>
+  <complexType>
+   <sequence>
+    <element ref='t:SyncHdr'/>
+    <element ref='t:SyncBody'/>
+   </sequence>
+  </complexType>
+ </element>
+
+ <element name='SyncHdr'>
+  <complexType>
+   <sequence>
+    <element ref='t:VerDTD'/>
+    <element ref='t:VerProto'/>
+    <element ref='t:SessionID'/>
+    <element ref='t:MsgID'/>
+    <element ref='t:Target'/>
+    <element ref='t:Source'/>
+    <element ref='t:RespURI' minOccurs='0' maxOccurs='1'/>
+    <element ref='t:NoResp' minOccurs='0' maxOccurs='1'/>
+    <element ref='t:Cred' minOccurs='0' maxOccurs='1'/>
+    <element ref='t:Meta' minOccurs='0' maxOccurs='1'/>
+   </sequence>
+  </complexType>
+ </element>
+
+ <element name='SyncBody'>
+  <complexType>
+   <sequence>
+    <choice maxOccurs='unbounded'>
+     <element ref='t:Alert'/>
+     <element ref='t:Atomic'/>
+     <element ref='t:Copy'/>
+     <element ref='t:Exec'/>
+     <element ref='t:Get'/>
+     <element ref='t:Map'/>
+     <element ref='t:Put'/>
+     <element ref='t:Results'/>
+     <element ref='t:Search'/>
+     <element ref='t:Sequence'/>
+     <element ref='t:Status'/>
+     <element ref='t:Sync'/>
+     <element ref='t:Add'/>
+     <element ref='t:Move'/>
+     <element ref='t:Replace'/>
+     <element ref='t:Delete'/>
+    </choice>
+    <element ref='t:Final' minOccurs='0' maxOccurs='1'/>
+   </sequence>
+  </complexType>
+ </element>
+
+ <element name='Archive'>
+  <complexType/>
+ </element>
+
+ <element name='Cmd'>
+  <complexType mixed='true'>
+  </complexType>
+ </element>
+
+ <element name='Chal'>
+  <complexType>
+   <sequence>
+    <element ref='t:Meta'/>
+   </sequence>
+  </complexType>
+ </element>
+
+ <element name='CmdID'>
+  <complexType mixed='true'>
+  </complexType>
+ </element>
+
+ <element name='CmdRef'>
+  <complexType mixed='true'>
+  </complexType>
+ </element>
+
+ <element name='Cred'>
+  <complexType>
+   <sequence>
+    <element ref='t:Meta' minOccurs='0' maxOccurs='1'/>
+    <element ref='t:Data'/>
+   </sequence>
+  </complexType>
+ </element>
+
+ <element name='Final'>
+  <complexType/>
+ </element>
+
+ <element name='Lang'>
+  <complexType mixed='true'>
+  </complexType>
+ </element>
+
+ <element name='LocName'>
+  <complexType mixed='true'>
+  </complexType>
+ </element>
+
+ <element name='LocURI'>
+  <complexType mixed='true'>
+  </complexType>
+ </element>
+
+ <element name='MoreData'>
+  <complexType/>
+ </element>
+
+ <element name='MsgID'>
+  <complexType mixed='true'>
+  </complexType>
+ </element>
+
+ <element name='MsgRef'>
+  <complexType mixed='true'>
+  </complexType>
+ </element>
+
+ <element name='NoResp'>
+  <complexType/>
+ </element>
+
+ <element name='NoResults'>
+  <complexType/>
+ </element>
+
+ <element name='NumberOfChanges'>
+  <complexType mixed='true'>
+  </complexType>
+ </element>
+
+ <element name='RespURI'>
+  <complexType mixed='true'>
+  </complexType>
+ </element>
+
+ <element name='SessionID'>
+  <complexType mixed='true'>
+  </complexType>
+ </element>
+
+ <element name='SftDel'>
+  <complexType/>
+ </element>
+
+ <element name='Source'>
+  <complexType>
+   <sequence>
+    <element ref='t:LocURI'/>
+    <element ref='t:LocName' minOccurs='0' maxOccurs='1'/>
+   </sequence>
+  </complexType>
+ </element>
+
+ <element name='SourceParent'>
+  <complexType>
+   <sequence>
+    <element ref='t:LocURI'/>
+   </sequence>
+  </complexType>
+ </element>
+
+ <element name='SourceRef'>
+  <complexType mixed='true'>
+  </complexType>
+ </element>
+
+ <element name='Target'>
+  <complexType>
+   <sequence>
+    <element ref='t:LocURI'/>
+    <element ref='t:LocName' minOccurs='0' maxOccurs='1'/>
+    <element ref='t:Filter' minOccurs='0' maxOccurs='1'/>
+   </sequence>
+  </complexType>
+ </element>
+
+ <element name='TargetParent'>
+  <complexType>
+   <sequence>
+    <element ref='t:LocURI'/>
+   </sequence>
+  </complexType>
+ </element>
+
+ <element name='TargetRef'>
+  <complexType mixed='true'>
+  </complexType>
+ </element>
+
+ <element name='VerDTD'>
+  <complexType mixed='true'>
+  </complexType>
+ </element>
+
+ <element name='VerProto'>
+  <complexType mixed='true'>
+  </complexType>
+ </element>
+
+ <element name='Item'>
+  <complexType>
+   <sequence>
+    <element ref='t:Target' minOccurs='0' maxOccurs='1'/>
+    <element ref='t:Source' minOccurs='0' maxOccurs='1'/>
+    <element ref='t:SourceParent' minOccurs='0' maxOccurs='1'/>
+    <element ref='t:TargetParent' minOccurs='0' maxOccurs='1'/>
+    <element ref='t:Meta' minOccurs='0' maxOccurs='1'/>
+    <element ref='t:Data' minOccurs='0' maxOccurs='1'/>
+    <element ref='t:MoreData' minOccurs='0' maxOccurs='1'/>
+   </sequence>
+  </complexType>
+ </element>
+
+ <element name='Meta'>
+  <complexType mixed='true'>
+  </complexType>
+ </element>
+
+ <element name='Correlator'>
+  <complexType mixed='true'>
+  </complexType>
+ </element>
+
+ <element name='Data'>
+  <complexType mixed='true'>
+  </complexType>
+ </element>
+
+ <element name='Add'>
+  <complexType>
+   <sequence>
+    <element ref='t:CmdID'/>
+    <element ref='t:NoResp' minOccurs='0' maxOccurs='1'/>
+    <element ref='t:Cred' minOccurs='0' maxOccurs='1'/>
+    <element ref='t:Meta' minOccurs='0' maxOccurs='1'/>
+    <element ref='t:Item' maxOccurs='unbounded'/>
+   </sequence>
+  </complexType>
+ </element>
+
+ <element name='Alert'>
+  <complexType>
+   <sequence>
+    <element ref='t:CmdID'/>
+    <element ref='t:NoResp' minOccurs='0' maxOccurs='1'/>
+    <element ref='t:Cred' minOccurs='0' maxOccurs='1'/>
+    <element ref='t:Data' minOccurs='0' maxOccurs='1'/>
+    <element ref='t:Correlator' minOccurs='0' maxOccurs='1'/>
+    <element ref='t:Item' minOccurs='0' maxOccurs='unbounded'/>
+   </sequence>
+  </complexType>
+ </element>
+
+ <element name='Atomic'>
+  <complexType>
+   <sequence>
+    <element ref='t:CmdID'/>
+    <element ref='t:NoResp' minOccurs='0' maxOccurs='1'/>
+    <element ref='t:Meta' minOccurs='0' maxOccurs='1'/>
+    <choice maxOccurs='unbounded'>
+     <element ref='t:Add'/>
+     <element ref='t:Replace'/>
+     <element ref='t:Delete'/>
+     <element ref='t:Copy'/>
+     <element ref='t:Atomic'/>
+     <element ref='t:Map'/>
+     <element ref='t:Move'/>
+     <element ref='t:Sequence'/>
+     <element ref='t:Sync'/>
+     <element ref='t:Get'/>
+     <element ref='t:Exec'/>
+     <element ref='t:Alert'/>
+    </choice>
+   </sequence>
+  </complexType>
+ </element>
+
+ <element name='Copy'>
+  <complexType>
+   <sequence>
+    <element ref='t:CmdID'/>
+    <element ref='t:NoResp' minOccurs='0' maxOccurs='1'/>
+    <element ref='t:Cred' minOccurs='0' maxOccurs='1'/>
+    <element ref='t:Meta' minOccurs='0' maxOccurs='1'/>
+    <element ref='t:Item' maxOccurs='unbounded'/>
+   </sequence>
+  </complexType>
+ </element>
+
+ <element name='Delete'>
+  <complexType>
+   <sequence>
+    <element ref='t:CmdID'/>
+    <element ref='t:NoResp' minOccurs='0' maxOccurs='1'/>
+    <element ref='t:Archive' minOccurs='0' maxOccurs='1'/>
+    <element ref='t:SftDel' minOccurs='0' maxOccurs='1'/>
+    <element ref='t:Cred' minOccurs='0' maxOccurs='1'/>
+    <element ref='t:Meta' minOccurs='0' maxOccurs='1'/>
+    <element ref='t:Item' maxOccurs='unbounded'/>
+   </sequence>
+  </complexType>
+ </element>
+
+ <element name='Exec'>
+  <complexType>
+   <sequence>
+    <element ref='t:CmdID'/>
+    <element ref='t:NoResp' minOccurs='0' maxOccurs='1'/>
+    <element ref='t:Cred' minOccurs='0' maxOccurs='1'/>
+    <element ref='t:Meta' minOccurs='0' maxOccurs='1'/>
+    <element ref='t:Correlator' minOccurs='0' maxOccurs='1'/>
+    <element ref='t:Item'/>
+   </sequence>
+  </complexType>
+ </element>
+
+ <element name='Get'>
+  <complexType>
+   <sequence>
+    <element ref='t:CmdID'/>
+    <element ref='t:NoResp' minOccurs='0' maxOccurs='1'/>
+    <element ref='t:Lang' minOccurs='0' maxOccurs='1'/>
+    <element ref='t:Cred' minOccurs='0' maxOccurs='1'/>
+    <element ref='t:Meta' minOccurs='0' maxOccurs='1'/>
+    <element ref='t:Item' maxOccurs='unbounded'/>
+   </sequence>
+  </complexType>
+ </element>
+
+ <element name='Map'>
+  <complexType>
+   <sequence>
+    <element ref='t:CmdID'/>
+    <element ref='t:Target'/>
+    <element ref='t:Source'/>
+    <element ref='t:Cred' minOccurs='0' maxOccurs='1'/>
+    <element ref='t:Meta' minOccurs='0' maxOccurs='1'/>
+    <element ref='t:MapItem' maxOccurs='unbounded'/>
+   </sequence>
+  </complexType>
+ </element>
+
+ <element name='MapItem'>
+  <complexType>
+   <sequence>
+    <element ref='t:Target'/>
+    <element ref='t:Source'/>
+   </sequence>
+  </complexType>
+ </element>
+
+ <element name='Move'>
+  <complexType>
+   <sequence>
+    <element ref='t:CmdID'/>
+    <element ref='t:NoResp' minOccurs='0' maxOccurs='1'/>
+    <element ref='t:Cred' minOccurs='0' maxOccurs='1'/>
+    <element ref='t:Meta' minOccurs='0' maxOccurs='1'/>
+    <element ref='t:Item' maxOccurs='unbounded'/>
+   </sequence>
+  </complexType>
+ </element>
+
+ <element name='Put'>
+  <complexType>
+   <sequence>
+    <element ref='t:CmdID'/>
+    <element ref='t:NoResp' minOccurs='0' maxOccurs='1'/>
+    <element ref='t:Lang' minOccurs='0' maxOccurs='1'/>
+    <element ref='t:Cred' minOccurs='0' maxOccurs='1'/>
+    <element ref='t:Meta' minOccurs='0' maxOccurs='1'/>
+    <element ref='t:Item' maxOccurs='unbounded'/>
+   </sequence>
+  </complexType>
+ </element>
+
+ <element name='Replace'>
+  <complexType>
+   <sequence>
+    <element ref='t:CmdID'/>
+    <element ref='t:NoResp' minOccurs='0' maxOccurs='1'/>
+    <element ref='t:Cred' minOccurs='0' maxOccurs='1'/>
+    <element ref='t:Meta' minOccurs='0' maxOccurs='1'/>
+    <element ref='t:Item' maxOccurs='unbounded'/>
+   </sequence>
+  </complexType>
+ </element>
+
+ <element name='Results'>
+  <complexType>
+   <sequence>
+    <element ref='t:CmdID'/>
+    <element ref='t:MsgRef' minOccurs='0' maxOccurs='1'/>
+    <element ref='t:CmdRef'/>
+    <element ref='t:Meta' minOccurs='0' maxOccurs='1'/>
+    <element ref='t:TargetRef' minOccurs='0' maxOccurs='1'/>
+    <element ref='t:SourceRef' minOccurs='0' maxOccurs='1'/>
+    <element ref='t:Item' maxOccurs='unbounded'/>
+   </sequence>
+  </complexType>
+ </element>
+
+ <element name='Search'>
+  <complexType>
+   <sequence>
+    <element ref='t:CmdID'/>
+    <element ref='t:NoResp' minOccurs='0' maxOccurs='1'/>
+    <element ref='t:NoResults' minOccurs='0' maxOccurs='1'/>
+    <element ref='t:Cred' minOccurs='0' maxOccurs='1'/>
+    <element ref='t:Target' minOccurs='0' maxOccurs='1'/>
+    <element ref='t:Source' maxOccurs='unbounded'/>
+    <element ref='t:Lang' minOccurs='0' maxOccurs='1'/>
+    <element ref='t:Meta'/>
+    <element ref='t:Data'/>
+   </sequence>
+  </complexType>
+ </element>
+
+ <element name='Sequence'>
+  <complexType>
+   <sequence>
+    <element ref='t:CmdID'/>
+    <element ref='t:NoResp' minOccurs='0' maxOccurs='1'/>
+    <element ref='t:Meta' minOccurs='0' maxOccurs='1'/>
+    <choice maxOccurs='unbounded'>
+     <element ref='t:Add'/>
+     <element ref='t:Replace'/>
+     <element ref='t:Delete'/>
+     <element ref='t:Copy'/>
+     <element ref='t:Atomic'/>
+     <element ref='t:Map'/>
+     <element ref='t:Move'/>
+     <element ref='t:Sync'/>
+     <element ref='t:Get'/>
+     <element ref='t:Alert'/>
+     <element ref='t:Exec'/>
+    </choice>
+   </sequence>
+  </complexType>
+ </element>
+
+ <element name='Status'>
+  <complexType>
+   <sequence>
+    <element ref='t:CmdID'/>
+    <element ref='t:MsgRef'/>
+    <element ref='t:CmdRef'/>
+    <element ref='t:Cmd'/>
+    <element ref='t:TargetRef' minOccurs='0' maxOccurs='unbounded'/>
+    <element ref='t:SourceRef' minOccurs='0' maxOccurs='unbounded'/>
+    <element ref='t:Cred' minOccurs='0' maxOccurs='1'/>
+    <element ref='t:Chal' minOccurs='0' maxOccurs='1'/>
+    <element ref='t:Data'/>
+    <element ref='t:Item' minOccurs='0' maxOccurs='unbounded'/>
+   </sequence>
+  </complexType>
+ </element>
+
+ <element name='Sync'>
+  <complexType>
+   <sequence>
+    <element ref='t:CmdID'/>
+    <element ref='t:NoResp' minOccurs='0' maxOccurs='1'/>
+    <element ref='t:Cred' minOccurs='0' maxOccurs='1'/>
+    <element ref='t:Target' minOccurs='0' maxOccurs='1'/>
+    <element ref='t:Source' minOccurs='0' maxOccurs='1'/>
+    <element ref='t:Meta' minOccurs='0' maxOccurs='1'/>
+    <element ref='t:NumberOfChanges' minOccurs='0' maxOccurs='1'/>
+    <choice minOccurs='0' maxOccurs='unbounded'>
+     <element ref='t:Add'/>
+     <element ref='t:Atomic'/>
+     <element ref='t:Copy'/>
+     <element ref='t:Delete'/>
+     <element ref='t:Move'/>
+     <element ref='t:Replace'/>
+     <element ref='t:Sequence'/>
+    </choice>
+   </sequence>
+  </complexType>
+ </element>
+
+ <element name='Filter'>
+  <complexType>
+   <sequence>
+    <element ref='t:Meta'/>
+    <element ref='t:Field' minOccurs='0' maxOccurs='1'/>
+    <element ref='t:Record' minOccurs='0' maxOccurs='1'/>
+    <element ref='t:FilterType' minOccurs='0' maxOccurs='1'/>
+   </sequence>
+  </complexType>
+ </element>
+
+ <element name='Field'>
+  <complexType>
+   <sequence>
+    <element ref='t:Item'/>
+   </sequence>
+  </complexType>
+ </element>
+
+ <element name='Record'>
+  <complexType>
+   <sequence>
+    <element ref='t:Item'/>
+   </sequence>
+  </complexType>
+ </element>
+
+ <element name='FilterType'>
+  <complexType mixed='true'>
+  </complexType>
+ </element>
+</schema>
